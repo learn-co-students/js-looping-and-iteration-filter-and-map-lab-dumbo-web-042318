@@ -6,17 +6,25 @@ function driversWithRevenueOver(drivers, revenue) {
   })
 }
 
+// function driverNamesWithRevenueOver(drivers, revenue) {
+//   const names = []
+//
+//   drivers.filter(function (driver) {
+//     if (driver.revenue > revenue) {
+//       names.push(driver.name)
+//     }
+//   })
+//
+//   return names
+// }
+
 function driverNamesWithRevenueOver(drivers, revenue) {
-  const names = []
-
-  drivers.filter(function (driver) {
-    if (driver.revenue > revenue) {
-      names.push(driver.name)
-    }
+  return driversWithRevenueOver(drivers, revenue).map(function (driver) {
+    return driver.name
   })
-
-  return names
 }
+
+
 
 
 function exactMatch(drivers, attribute) {
@@ -28,14 +36,20 @@ function exactMatch(drivers, attribute) {
 }
 
 
+// function exactMatchToList(drivers, attribute) {
+//   const names = []
+//
+//   drivers.filter(function (driver) {
+//     if (driver.name === attribute.name || driver.revenue === attribute.revenue) {
+//       names.push(driver.name)
+//     }
+//   })
+//
+//   return names
+// }
+
 function exactMatchToList(drivers, attribute) {
-  const names = []
-
-  drivers.filter(function (driver) {
-    if (driver.name === attribute.name || driver.revenue === attribute.revenue) {
-      names.push(driver.name)
-    }
+  return exactMatch(drivers, attribute).map(function (driver) {
+    return driver.name
   })
-
-  return names
 }
